@@ -1,0 +1,18 @@
+init:
+    go mod init
+
+build:
+    go mod build . 
+
+
+update the paths for the package in go.mod, within existing directory, run:
+    go mod edit -replace example.com/greetings=../greetings
+
+locate and download modules:
+    go mod tidy
+ 
+Camel case followed for external function names ( which is to be exported to be called from other package )
+
+
+Slice:
+    List which increases size dynamically as we add and remove items
