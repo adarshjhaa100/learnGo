@@ -21,3 +21,13 @@ Camel case followed for external function names ( which is to be exported to be 
 
 Slice:
     List which increases size dynamically as we add and remove items
+
+Workspaces:
+    Managing multiple modules in a single Workspaces
+
+    go work init ./modname 
+        Use module in the workspace as main modules while doing the build
+        In any subdir, modules will be active
+    
+    go work use ./calculate
+        
