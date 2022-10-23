@@ -7,6 +7,16 @@ import (
 	"time"
 )
 
+/*
+	init(): special function along with main() which is used in the beginning of the program to initialize stuff
+	initializing random with a seed ( constant seed ensure same sequence of random numbers each time )
+	for a different sequence, initialize with seed: time.now().UnixNano(), 
+*/
+func init() {
+	// rand.seed(25)
+	rand.Seed(time.Now().UnixNano())
+}
+
 
 // return either of the formats specified inside the MESSAGE_OPTIONS
 func randomFormat() string {
@@ -34,12 +44,28 @@ func GetRandomGreeting(name string) (string, error) {
 	return message, nil
 }
 
-/*
-	init(): special function along with main() which is used in the beginning of the program to initialize stuff
-	initializing random with a seed ( constant seed ensure same sequence of random numbers each time )
-	for a different sequence, initialize with seed: time.now().UnixNano(), 
-*/
-func init() {
-	// rand.seed(25)
-	rand.Seed(time.Now().UnixNano())
+
+// Return a map with k,v as: name, message
+func GetMultipleRandomGreetings(names []string) (map[string]string, error) {
+	// initialize a map
+	messages:= make(map[string]string) // map[key-type]value-type
+	
+	// loop through list of names and get message for each name
+	for _, name:= range names {
+		message, err:= GetRandomGreeting(name)
+
+		// In case any of the names are empty
+		if err!=nil {
+			return nil, err
+		}
+
+		// Associate name with message
+		messages[name] = message
+	}
+
+	return messages, nil
+
 }
+
+
+

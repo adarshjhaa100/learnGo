@@ -1,0 +1,4 @@
+# binary files by default are programmed to be out in the out directory
+out/
+*/out/
+
