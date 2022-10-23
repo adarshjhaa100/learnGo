@@ -29,5 +29,24 @@ Workspaces:
         Use module in the workspace as main modules while doing the build
         In any subdir, modules will be active
     
-    go work use ./calculate
-        
+    go work use ./calculate: add module to workspace
+
+    go work sync : sync modules across workspaces
+
+
+Language Concepts of Go:
+    Workspace langspec has been created
+    cd ./langspecs
+    if creating a new module samplemod:
+        mkdir samplemod && cd samplemod : create directory
+        go mod init learn/samplemod : initialize the module
+        cd .. && go work use ./samplemod : add the packages to workspace
+
+
+
+
+
+
+
+
+
