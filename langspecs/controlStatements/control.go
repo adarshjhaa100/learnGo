@@ -48,6 +48,7 @@ func IfStatementTest() {
 
 	// short statements (like for, we can use short statements like the init). 
 	// The scope of vars decalred within the short statement is local to the for
+	// ** also, else should start just after if scope braces ends(} )
 	if v := 31; v%6 == 0 {
 		fmt.Printf("%v is a multiple of 6.\n", v);
 	} else {
