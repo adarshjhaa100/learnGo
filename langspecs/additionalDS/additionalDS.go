@@ -359,6 +359,6 @@ func ClosureTest() {
 	calculateSumArr([]int{1,2,3,4,})
 	// the bindedVar was modified by closureTest
 	fmt.Println(bindedVar)
-
+	
 
 }
