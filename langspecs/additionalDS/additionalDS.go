@@ -26,7 +26,7 @@ func PointerType() {
 	intvar := 65
 	floatvar := float64(21)
 	stringvar := "hello"
-	testvar := string(intvar) // ocnvert int to string
+	testvar := string(intvar) // convert int to string
 
 	var ptr2 *float64 // declare a ptr to float64
 	ptr2 = &floatvar  // initialize ptr

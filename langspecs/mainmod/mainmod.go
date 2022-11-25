@@ -4,8 +4,8 @@ package main
 import (
 	"fmt"
 	"math/cmplx"
-	// "learn/controlstatements"
-	"learn/additionalDS" 
+	// "learn/methods"
+	"learn/interfaces"
 )
 
 // functions: takes more than one args and can return more than one args
@@ -160,6 +160,7 @@ func main() {
 	// additionalDS.MapTest()
 	// additionalDS.WordCountMap()
 	// additionalDS.PassFunction()
-	additionalDS.ClosureTest()
-
+	// additionalDS.ClosureTest()
+	// methods.TestVertex()
+	interfaces.InterfaceTest()
 }

@@ -3,5 +3,7 @@ go 1.19
 use (
 	./additionalDS
 	./controlStatements
+	./interfaces
 	./mainmod
+	./methods
 )

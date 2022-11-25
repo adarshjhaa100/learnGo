@@ -101,6 +101,7 @@ func DeferTest() {
 	// This will ensure that they will run at the end.
 	// Even if the surrounding function exits, defer will run, its pushed on a separate call stack of itself
 
+	// defer becomes useful for cleanup and stuff 
 	fmt.Println("Statement 0")
 	defer fmt.Println("Statement 1")
 	defer fmt.Println("Statement 1.1")
