@@ -45,8 +45,16 @@ Language Concepts of Go:
 
 
 
+// Remove autoremoval of go code on save for the go vscode extension
+"[go]": {
 
+        "editor.formatOnSave": false,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": false
+        },
+    },
+    "go.formatTool": "gofmt",
 
-
-
-
+Import Error:
+Fix gopls Error for: 
+    could not import package from path (add the workspace folder of go to vscode workspace)
