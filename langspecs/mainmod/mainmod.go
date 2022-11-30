@@ -162,5 +162,9 @@ func main() {
 	// additionalDS.PassFunction()
 	// additionalDS.ClosureTest()
 	// methods.TestVertex()
-	interfaces.InterfaceTest()
+	// interfaces.InterfaceTest()
+	// interfaces.InterfaceExample()
+	// interfaces.ErrorInterfaceExercise()
+	// interfaces.ReaderInterfaceTut()
+	interfaces.ImageInterfaceTest()
 }

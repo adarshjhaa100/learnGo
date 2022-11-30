@@ -48,7 +48,6 @@ func (v *Vertex3D) Scale(s float64) {
 }
 
 
-
 func TestVertex() {
 	v1 := Vertex3D {1, 2, 3}
 	v2 := Vertex3D {2, 3, 4}

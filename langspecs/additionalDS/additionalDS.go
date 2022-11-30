@@ -141,7 +141,6 @@ func Slices() {
 	fmt.Println("realest 2d slice", slice2d, len(slice2d), cap(slice2d), slice2d[1])
 
 
-
 	// append to slice
 	fmt.Println("Append to slice : ")
 	slExpandable := []int32 {}
@@ -359,6 +358,4 @@ func ClosureTest() {
 	calculateSumArr([]int{1,2,3,4,})
 	// the bindedVar was modified by closureTest
 	fmt.Println(bindedVar)
-	
-
 }
