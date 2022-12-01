@@ -188,19 +188,15 @@ func ReaderInterfaceTut() {
 		if err == io.EOF {
 			break
 		}
-
 	}
-
 }
 
 
 func ImageInterfaceTest() {
 	img := image.NewRGBA64(image.Rect(0, 0, 1, 1)) // returns RGBA64 image with given bounds
 
-
 	fmt.Printf("Bounds: %#v\n", img.Bounds())
 	fmt.Printf("At: %#v\n", img.At(0,0))
-	
 }
 
 

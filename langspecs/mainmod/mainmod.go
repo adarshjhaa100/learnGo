@@ -5,7 +5,8 @@ import (
 	"fmt"
 	"math/cmplx"
 	// "learn/methods"
-	"learn/interfaces"
+	// "learn/interfaces"
+	"learn/generics"
 )
 
 // functions: takes more than one args and can return more than one args
@@ -109,7 +110,7 @@ func moreThanOne(listvar ...any) {
 
 func main() {
 
-	fmt.Println("Hello!")
+	fmt.Println("Hello Main!")
 
 	// arithmetic: same as in c (int/int = int, int/float any combination gives float)
 
@@ -166,5 +167,7 @@ func main() {
 	// interfaces.InterfaceExample()
 	// interfaces.ErrorInterfaceExercise()
 	// interfaces.ReaderInterfaceTut()
-	interfaces.ImageInterfaceTest()
+	// interfaces.ImageInterfaceTest()
+	// generics.GenericsUsage()
+	generics.UtilizeLinkedList()
 }
