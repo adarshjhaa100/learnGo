@@ -78,26 +78,25 @@ func Insert(head *List[any], value any) {
 	for {
 		// fmt.Printf("Type: %#v\n", current)
 		
-		// Assumptions: Null linked list has head {-1, null}
-		if(current.next == nil && current.val == -1) {
-			current.val = value
-			break
-		}	
-		
-		if(current.next == nil) {
-			current.next = &newValue
-			current = current.next
-			break
-		}
-
-		if(current.next != nil){
-			current = current.next
-		}
-
 		if(current == nil){
 			println("Reached End of Linked List")
 			break
 		}	
+
+		// Assumptions: Null linked list has head {-1, null}
+		if(*current == List[any]{}) {
+			current.val = value
+			break
+		}	
+		
+		// Next is 
+		if(current.next == nil) {
+			current.next = &newValue
+			break
+		}
+
+		current = current.next
+		
 	}
 }
 
@@ -107,10 +106,11 @@ func Traverse(head *List[any]) {
 	ptr := head
 
 	for {
+		
+		fmt.Printf("Node at posn %v : %#v\n", count, ptr)
 		if(ptr == nil){
 			break
 		}
-		fmt.Printf("Node at posn %v : %#v\n", count, ptr)
 		count+=1
 		ptr = ptr.next
 	}
@@ -120,8 +120,10 @@ func Traverse(head *List[any]) {
 func UtilizeLinkedList() {
 	// Instantiate the head list (A generic type must be instantiated), 
 	// a type must be specified as well. Also, any is alias for interface{}
-	head := List[any]{-1, nil}
+	// head := List[any]{-1, nil}
 
+	var head List[any] // the value of null head will be List[any]{}
+	// megahead = List[any]{-1, nil}
 	// head = List[any]{1, nil}
 	Insert(&head, 23)
 	Insert(&head, 24)
@@ -129,7 +131,7 @@ func UtilizeLinkedList() {
 	
 
 	Traverse(&head)
-	// fmt.Printf("Head: %#v", head)
+	fmt.Printf("Head Node: %#v", head )
 
 }
 
