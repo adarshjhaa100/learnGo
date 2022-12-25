@@ -76,8 +76,7 @@ func Insert(head *List[any], value any) {
 	current := head
 	
 	for {
-		// fmt.Printf("Type: %#v\n", current)
-		
+		// head/current ptr is null
 		if(current == nil){
 			println("Reached End of Linked List")
 			break
@@ -95,10 +94,13 @@ func Insert(head *List[any], value any) {
 			break
 		}
 
-		current = current.next
-		
+		current = current.next	
 	}
+
 }
+
+
+
 
 // Traverse linked list:
 func Traverse(head *List[any]) {
@@ -125,11 +127,12 @@ func UtilizeLinkedList() {
 	var head List[any] // the value of null head will be List[any]{}
 	// megahead = List[any]{-1, nil}
 	// head = List[any]{1, nil}
+	
+	// TODO: add method for Inserting into a linked list instead of a function
 	Insert(&head, 23)
 	Insert(&head, 24)
 	Insert(&head, 25)
 	
-
 	Traverse(&head)
 	fmt.Printf("Head Node: %#v", head )
 

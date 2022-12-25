@@ -34,6 +34,9 @@ Workspaces:
     go work sync : sync modules across workspaces
 
 
+In real world code, workspace is not created. Need to create modules with package in them
+
+
 Language Concepts of Go:
     Workspace langspec has been created
     cd ./langspecs

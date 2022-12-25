@@ -151,6 +151,7 @@ func main() {
 	// ----- other data structures: pointers,structs,maps,slices
 
 	// ----- other data structures: pointers,structs,maps,slices
+	
 	// additionalDS.TestPkg()
 	// additionalDS.PointerType()
 	// additionalDS.StructTest()
@@ -162,12 +163,16 @@ func main() {
 	// additionalDS.WordCountMap()
 	// additionalDS.PassFunction()
 	// additionalDS.ClosureTest()
+	
+	// --interfaces and methods
+
 	// methods.TestVertex()
 	// interfaces.InterfaceTest()
 	// interfaces.InterfaceExample()
-	// interfaces.ErrorInterfaceExercise()
+	// interfaces.ErrorInterfaceExercise() 
 	// interfaces.ReaderInterfaceTut()
 	// interfaces.ImageInterfaceTest()
 	// generics.GenericsUsage()
+	
 	generics.UtilizeLinkedList()
 }
