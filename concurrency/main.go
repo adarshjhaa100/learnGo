@@ -9,5 +9,8 @@ func main() {
 	fmt.Printf("\nGoroutines\n")
 	// goroutines.Demo() // goroutine demo
 
-	goroutines.DemoUnbufChannel()
+	// goroutines.DemoUnbufChannel()
+	// goroutines.DemoBufChannel()
+	// goroutines.ChnlRange()
+	goroutines.ChnlSelect()
 }

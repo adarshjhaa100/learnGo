@@ -80,6 +80,7 @@ func DemoUnbufChannel() {
 	fmt.Println(x, y, x.val + y.val )
 }
 
+
 /*
 	For buffered channel. 
 	sends are blocked when buffer is full and receive is blocked when buffer empty
@@ -90,8 +91,123 @@ func DemoUnbufChannel() {
 	C -> R(v) // Channel will allow receive without sender, C = [], empty
 	C -> R // Receive blocked, will require sender
 */
-func DemoBufChannel() {}
 
+
+// func sendTobuf(chn <-chan int) {
+// }
+
+func sendToChannel(val int, chanl chan int) {
+	fmt.Printf("\nInserting value: %v\n", val)
+	// time.Sleep(time.Second)
+	chanl <- val
+	if(val >= 60) {
+		// Sender can close a channel
+		close(chanl)
+	}
+	fmt.Printf("\nInserting value success: %v\n", val)
+}
+
+
+func DemoBufChannel() {
+	
+	// Values are inserted and removed in FIFO order
+	chnlbuf := make(chan int, 2) // can store upto 2 values in buffer, any addition value sent required receiver to be active for receiving
+
+	// to get the length of buffered channel, len(channel), bo of elements stored in channel
+
+	// inline function without explicit function declaration
+	go func() {
+		i := 0
+		for {
+			// time.Sleep(time.Second)
+			
+			fmt.Printf("\nreceiving index = %v, chnl = %#v\n", i, len(chnlbuf))
+			
+			// so as to not read from empty cahnnel
+			if len(chnlbuf) > 0 {
+				// isOpen is true until channel is Open
+				val, isOpen :=<- chnlbuf
+				fmt.Printf("\nreceiving index=%v, value=%#v, open? = %v\n", i, val, isOpen)
+			i++ } else {
+				i++
+				fmt.Println("Channel empty")
+				continue
+			}
+
+		}
+	}()
+
+	sendToChannel(10, chnlbuf) // success, buffer: 1/2, non blobking
+	sendToChannel(20, chnlbuf)  // success, buffer: 2/2, blocking
+	sendToChannel(30, chnlbuf)  // overflow, requires a receiver running in a parallel goroutine
+	sendToChannel(40, chnlbuf) 
+	sendToChannel(50, chnlbuf) 
+	sendToChannel(60, chnlbuf) 	
+
+
+	//send:  
+	// 10,20, 30
+	// chanl: 
+}
+
+
+func sqrtChnl(chnl chan int) {
+	val := 0
+	for {
+		val += 1
+		chnl <- val * val
+		if(val>100) {
+			close(chnl) // its not necessary to close the chnl until we use something like range
+			fmt.Println("Closing Channel ... ")
+			break
+		}
+	}
+}
+
+func ChnlRange() {
+	chanl := make(chan int)
+	
+	go sqrtChnl(chanl)
+	// channel range, will keep receiving until channel is closed
+	for val := range chanl {
+		fmt.Println(val)
+	}
+
+}
+
+/*
+	Select blocks until one of the cases can run, then it executes the case.
+	In case multiple cases can run, it chooses them at random
+*/
+
+func ChnlSelect() {
+	chanel := make(chan int)
+	quit := make(chan int)
+
+	go func() {
+		x, y := 0, 1
+		for {
+			select {
+				case chanel <- x:
+					x, y = y, x+y
+				case <-quit:
+					fmt.Println("quit...")
+				default: // works when no other case runs
+					fmt.Println("Nothing to receive from chanels...")
+					continue
+			}
+		}
+	}()
+	
+	
+		// run till i=9, then quit, channel select will select the first case of chanel<-x until we can consume, 
+		// then close. This way we can close the connection from receiver
+		for i:=0; i<10; i++ {
+			fmt.Println(<-chanel)
+		}
+		quit<-0 
+
+}
 
 
 
