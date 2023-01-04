@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	goroutines "learn/concurrency/goroutines"
+
 )
 
 func main() {
@@ -12,5 +13,7 @@ func main() {
 	// goroutines.DemoUnbufChannel()
 	// goroutines.DemoBufChannel()
 	// goroutines.ChnlRange()
-	goroutines.ChnlSelect()
+	// goroutines.ChnlSelect()
+	// goroutines.Soln1()
+	goroutines.Soln2()
 }

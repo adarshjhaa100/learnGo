@@ -156,6 +156,7 @@ func sqrtChnl(chnl chan int) {
 	for {
 		val += 1
 		chnl <- val * val
+		
 		if(val>100) {
 			close(chnl) // its not necessary to close the chnl until we use something like range
 			fmt.Println("Closing Channel ... ")
@@ -177,7 +178,19 @@ func ChnlRange() {
 
 /*
 	Select blocks until one of the cases can run, then it executes the case.
-	In case multiple cases can run, it chooses them at random
+	In case multiple cases can run, it chooses them at random.
+
+	This is pretty useful while receiving from mutiple channels,
+		In an iterative implementation: 
+			val1 <- chan1; val2 <- chan2
+		statement 2 waits for the first statement to execute, whats the point of concurrency then
+
+		instead if we do this:
+		select {
+			case x := <-chan1: statement
+			case y := <-chan2: statement
+		}
+
 */
 
 func ChnlSelect() {
@@ -190,6 +203,8 @@ func ChnlSelect() {
 			select {
 				case chanel <- x:
 					x, y = y, x+y
+				case t := <-chanel:
+					fmt.Println(t)
 				case <-quit:
 					fmt.Println("quit...")
 				default: // works when no other case runs
