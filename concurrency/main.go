@@ -14,5 +14,6 @@ func main() {
 	// goroutines.ChnlRange()
 	// goroutines.ChnlSelect()
 	// goroutines.Soln1()
-	goroutines.Soln2()
+	// goroutines.Soln2()
+	goroutines.MutexExample()
 }
