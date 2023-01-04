@@ -1,3 +1,4 @@
+// Can access package in module created using: modulename/packagename
 package generictype
 
 import "fmt"

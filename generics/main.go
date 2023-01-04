@@ -13,6 +13,7 @@ func main() {
 	lst := types.List[string]{}	
 	fmt.Printf("\nInitial List: %#v\n", lst)
 
+
 	a := lst.Insert("Node1", -1)
 	a = lst.Insert("Node2", -1)
 	a = lst.Insert("Node3", -1)

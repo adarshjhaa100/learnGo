@@ -1,0 +1,4 @@
+concurrency:
+
+Introduction: https://go.dev/talks/2012/concurrency.slide#4
+Advanced: https://www.youtube.com/watch?v=QDDwwePbDtw
