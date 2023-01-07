@@ -1,4 +1,4 @@
-module example/hello
+module example/testing_sample
 
 go 1.19
 

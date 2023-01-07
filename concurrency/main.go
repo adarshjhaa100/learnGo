@@ -15,5 +15,6 @@ func main() {
 	// goroutines.ChnlSelect()
 	// goroutines.Soln1()
 	// goroutines.Soln2()
-	goroutines.MutexExample()
+	// goroutines.MutexExample()
+	goroutines.RunSolnWebCrawler()
 }

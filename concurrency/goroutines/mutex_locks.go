@@ -17,6 +17,7 @@ type SafeCounter struct {
 }
 
 func (ctr *SafeCounter) IncrementCounter(key string) {
+	time.Sleep(time.Millisecond * 5000)
 	ctr.mu.Lock() // lock for write
 	ctr.val[key]++ // increment value
 	ctr.mu.Unlock() // unlock before exit
@@ -33,7 +34,7 @@ func (ctr *SafeCounter) Value(key string) int{
 
 func MutexExample() {
 	ctr := SafeCounter{val: make(map[string]int)}	
-	for i := 0; i <= 1000; i++ {
+	for i := 0; i <= 100000; i++ {
 		go ctr.IncrementCounter("testKey")
 		
 		go func() {
@@ -41,7 +42,7 @@ func MutexExample() {
 		}()
 	} 
 
-	time.Sleep(time.Second * 1)
+	time.Sleep(time.Second * 6)
 
 	fmt.Println("Counter Value", ctr.Value("testKey"))
 

@@ -2,7 +2,7 @@ package main
 
 import (
 		"fmt"
-		strUtility "example/hello/morestring" // import package morestring inside of hello and give alias strUtility
+		strUtility "example/testing_sample/morestring" // import package morestring inside of hello and give alias strUtility
 		gogcmp "github.com/google/go-cmp/cmp" //downloading external package(always import package, not module)
 		) 
 

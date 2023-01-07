@@ -41,8 +41,6 @@ func Walk(node *tree.Tree, ch chan int) {
 	Walk(node.Left, ch)
 	ch <- node.Value
 	Walk(node.Right, ch)
-	
-	
 }
 
 
