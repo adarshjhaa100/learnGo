@@ -205,6 +205,8 @@ func RangeTest() {
 	// for item in arr
 	arr := [5]int {1,2,3,45,5}
 
+	// len(arr)
+
 	for index, val := range arr {
 		fmt.Println(index, val)
 	}

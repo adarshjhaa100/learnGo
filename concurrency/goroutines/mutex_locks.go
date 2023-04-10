@@ -34,7 +34,7 @@ func (ctr *SafeCounter) Value(key string) int{
 
 func MutexExample() {
 	ctr := SafeCounter{val: make(map[string]int)}	
-	for i := 0; i <= 100000; i++ {
+	for i := 0; i <= 100_000; i++ {
 		go ctr.IncrementCounter("testKey")
 		
 		go func() {

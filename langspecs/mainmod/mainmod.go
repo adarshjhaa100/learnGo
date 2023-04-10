@@ -44,8 +44,6 @@ func declareVars() {
 	fmt.Println(a, b)
 	fmt.Println(call, draw, full)
 
-	
-
 	// Constants, cannot be declared using a:= syntax
 	const I int = 3824723
 	const PI float32 = 3.1416
@@ -77,6 +75,7 @@ func basicTypes() {
 		MaxInt     uint64     = 1<<64 - 1
 		ComplexVar complex128 = cmplx.Sqrt(-2 + 3i)
 	)
+
 
 	fmt.Println(StringVar, MaxInt, ComplexVar)
 

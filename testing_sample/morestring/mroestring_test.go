@@ -22,7 +22,6 @@ func TestConcatString(t *testing.T) {
 
 	for _, test_case := range test_cases {
 		output := ConcatString(test_case.input[0], test_case.input[1])
-
 		if output != test_case.expectedOutput {
 			
 			// Equivalent to logf followed by fail

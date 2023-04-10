@@ -7,7 +7,7 @@ import (
 )
 
 /*
-	Go routines share the asme memory space, so different threads accessing the same resource should be synced
+	Go routines share the same memory space, so different threads accessing the same resource should be synced
 */
 
 func runSimpleFunc(s string) {
@@ -16,7 +16,6 @@ func runSimpleFunc(s string) {
 		time.Sleep(100 * time.Millisecond)
 		fmt.Printf("\nstring = %v, time = %v, pid = %v, %v\n", 
 		s, time.Now(), os.Getpid(), os.Getppid())
-
 	}
 
 }
@@ -123,7 +122,7 @@ func DemoBufChannel() {
 			
 			fmt.Printf("\nreceiving index = %v, chnl = %#v\n", i, len(chnlbuf))
 			
-			// so as to not read from empty cahnnel
+			// so as to not read from empty channel
 			if len(chnlbuf) > 0 {
 				// isOpen is true until channel is Open
 				val, isOpen :=<- chnlbuf
